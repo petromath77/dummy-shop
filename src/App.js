@@ -7,7 +7,7 @@ import Pages from './Pages/Pages';
 function App() {
   return (
     <BrowserRouter>
-      <div className="App flex flex-col h-screen justify-between">
+      <div className="App min-h-screen flex flex-col justify-between bg-slate-100">
         <Header />
         <Pages/>
         <Footer />
