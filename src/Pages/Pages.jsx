@@ -9,7 +9,7 @@ import WClothing from './WClothing';
  
 const Pages = () => {
   return (
-    <div className="mb-auto h-full bg-slate-100">
+    <div className="flex-grow">
         <Routes>
             <Route path='/' element={<Home />}/>
             <Route path='*' element={<NotFound />}/>
