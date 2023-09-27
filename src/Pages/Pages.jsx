@@ -6,6 +6,7 @@ import Electronics from './Electronics';
 import Jewelery from './Jewelery';
 import MClothing from './MClothing';
 import WClothing from './WClothing';
+import Detail from './Detail';
  
 const Pages = () => {
   return (
@@ -13,6 +14,7 @@ const Pages = () => {
         <Routes>
             <Route path='/' element={<Home />}/>
             <Route path='*' element={<NotFound />}/>
+            <Route path='/products/:id' element={<Detail />}/>
             <Route path='/men-clothing' element={<MClothing />}/>
             <Route path='/woman-clothing' element={<WClothing />}/>
             <Route path='/electronics' element={<Electronics />}/>

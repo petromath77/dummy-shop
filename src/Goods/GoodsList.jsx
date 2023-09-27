@@ -3,8 +3,6 @@ import GoodsCard from './GoodsCard';
 
 const GoodsList = () => {
     const goods = useSelector(state => state.goods.goods);
-    
-    console.log(goods);
 
   return (
     <>
