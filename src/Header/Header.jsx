@@ -7,6 +7,13 @@ import { BiMenu, BiMenuAltRight } from 'react-icons/bi';
 
 const Header = () => {
     const [menu, setMenu] = useState(false);
+    
+    const linksMenu = [
+        {'men-clothing': 'Men\'s Clothing'},
+        {'woman-clothing': 'Woman\'s Clothing'},
+        {'electronics': 'Electronics'},
+        {'jewelery': 'Jewelery'}
+    ]
 
     const toggleMenu = () => {
         setMenu(!menu);
@@ -26,10 +33,10 @@ const Header = () => {
                         <BiMenuAltRight style={iconMenu} />
                     }
                 </button>
-                <Nav/>
+                <Nav links={linksMenu}/>
             </div>
         </div>
-        <MobileNav menu={menu}/>
+        <MobileNav links={linksMenu} menu={menu}/>
     </header>
   )
 }

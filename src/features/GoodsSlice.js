@@ -17,7 +17,7 @@ export const fetchAllGoods = createAsyncThunk(
 
 const setError = (state, action) => {
     state.status = 'rejected';
-    state.error = action.payload;
+    state.error = action.error
 }
 
 export const goodsSlice = createSlice({

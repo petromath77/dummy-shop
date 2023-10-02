@@ -7,8 +7,6 @@ export const fetchDetail = createAsyncThunk(
             const response = await fetch(`https://fakestoreapi.com/products/${id}`);
             const data = response.json();
 
-            console.log(data);
-
             return data;
             
         } catch (error) {
@@ -19,7 +17,7 @@ export const fetchDetail = createAsyncThunk(
 
 const setError = (state, action) => {
     state.status = 'rejected';
-    state.error = action.payload;
+    state.error = action.error
 }
 
 export const detailSlice = createSlice({
