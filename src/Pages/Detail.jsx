@@ -35,11 +35,11 @@ const Detail = () => {
         {status === 'succeeded' &&
           <div className="flex mt-8">
             <div className="w-1/2">
-                <img src={product.image} alt="" />
+                <img className="w-full h-96 object-contain" src={product.image} alt="" />
             </div>
             <div className="w-1/2 px-8">
                 <div className="py-8 px-4 bg-slate-300 rounded-xl">
-                    <h3 className="font-bold text-3xl mb-4">{product.title}</h3>
+                    <h3 className="font-bold text-2xl mb-4">{product.title}</h3>
                     <p className="text-lg italic mb-4">{product.description}</p>
                     <div className="font-bold text-lg italic mb-4">Cost: {product.price}$</div>
                 </div>
