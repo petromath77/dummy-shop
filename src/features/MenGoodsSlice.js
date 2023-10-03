@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const fetchAllGoods = createAsyncThunk(
-    'goods/fetchAllGoods',
+export const fetchMenGoods = createAsyncThunk(
+    'mens/fetchMenGoods',
     async(_, {rejectWithValue}) => {
         try {
-            const response = await fetch('https://fakestoreapi.com/products');
+            const response = await fetch(`https://fakestoreapi.com/products/category/men's%20clothing`);
             const data = response.json();
 
             return data;
@@ -16,12 +16,12 @@ export const fetchAllGoods = createAsyncThunk(
 )
 
 const setError = (state, action) => {
-    state.status = 'rejected';
+    state.status = 'rejected'; 
     state.error = action.error
 }
 
-export const goodsSlice = createSlice({
-    name: 'goods',
+export const menGoodsSlice = createSlice({
+    name: 'mens',
     initialState: {
         goods: [],
         status: null,
@@ -32,15 +32,15 @@ export const goodsSlice = createSlice({
     },
     extraReducers(builder) {
         builder
-          .addCase(fetchAllGoods.pending, (state) => {
+          .addCase(fetchMenGoods.pending, (state) => {
             state.status = 'loading';
           })
-          .addCase(fetchAllGoods.fulfilled, (state, action) => {
+          .addCase(fetchMenGoods.fulfilled, (state, action) => {
             state.status = 'succeeded';
             state.goods = action.payload;
           })
-          .addCase(fetchAllGoods.rejected, setError)
+          .addCase(fetchMenGoods.rejected, setError)
     }
 })
 
-export default goodsSlice.reducer
+export default menGoodsSlice.reducer

@@ -1,14 +1,15 @@
-import React from 'react'
+import {NavLink} from 'react-router-dom';
 
-const GoodsCard = ({category, description, image, price, title}) => {
+const GoodsCard = ({id, image, price, title}) => {
+
   return (
-    <div className='flex flex-col justify-between p-4 border border-slate-400 rounded-xl'>
-        <img className='w-56 h-56 my-0 mx-auto object-contain' src={image} alt="" />
+    <NavLink to={`/products/${id}`} className='flex flex-col flex-start p-4 border border-slate-400 rounded-xl hover:shadow-lg ease duration-300'>
+        <img className='w-56 h-56 mb-4 my-0 mx-auto object-contain' src={image} alt="" />
         <div>
-            <h4 className='mt-4 font-bold'>{title}</h4>
-            <div className='mt-4'>{price}$</div>
+          <h4 className='mt-4 font-bold'>{title}</h4>
+          <div className='mt-4'>{price}$</div>
         </div>
-    </div>
+    </NavLink>
   )
 }
 
