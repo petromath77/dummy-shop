@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllGoods } from '../features/GoodsSlice';
 import GoodsWrapper from '../Goods/GoodsWrapper';
+import Section from '../UI/Section';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -12,9 +13,9 @@ const Home = () => {
   }, [dispatch])
 
   return (
-    <section className="w-full mx-auto max-w-5xl px-4 py-8">
+    <Section>
       <GoodsWrapper goods={goods} status={status} error={error}/>
-    </section>
+    </Section>
   )
 }
 

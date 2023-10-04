@@ -7,6 +7,7 @@ import Jewelery from './Jewelery';
 import MClothing from './MClothing';
 import WClothing from './WClothing';
 import Detail from './Detail';
+import Cart from './Cart';
  
 const Pages = () => {
   return (
@@ -19,6 +20,7 @@ const Pages = () => {
             <Route path='/woman-clothing' element={<WClothing />}/>
             <Route path='/electronics' element={<Electronics />}/>
             <Route path='/jewelery' element={<Jewelery />}/>
+            <Route path='/cart' element={<Cart />}/>
         </Routes>
     </div>
   )
