@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchDetail } from '../features/DetailSlice';
 import { Watch } from  'react-loader-spinner'
 import Section from '../UI/Section';
+import { ImPriceTag } from 'react-icons/im';
 
 const Detail = () => {
     let params = useParams();
@@ -43,7 +44,10 @@ const Detail = () => {
                 <div className="py-8 px-4 bg-slate-300 rounded-xl">
                     <h3 className="font-bold text-2xl mb-4">{product.title}</h3>
                     <p className="text-lg italic mb-4">{product.description}</p>
-                    <div className="font-bold text-lg italic mb-4">Cost: {product.price}$</div>
+                    <div className="flex justify-center gap-4">
+                      <ImPriceTag style={icon}/>
+                      <div className="font-bold text-lg italic mb-4">{product.price}$</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -51,5 +55,7 @@ const Detail = () => {
     </Section>
   )
 }
+
+const icon = {color: "#475569", fontSize: '26px'};
 
 export default Detail
