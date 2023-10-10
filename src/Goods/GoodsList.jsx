@@ -6,7 +6,6 @@ const GoodsList = ({goods}) => {
   const dispath = useDispatch();
   const addProduct = (item) => {
     dispath(addCart(item));
-    console.log(item);
   }
 
   return (

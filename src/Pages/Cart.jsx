@@ -1,10 +1,10 @@
-import React from 'react'
-import Section from '../UI/Section'
+import Section from '../UI/Section';
+import CartList from '../Goods/CartList'
 
 const Cart = () => {
   return (
     <Section>
-        <div>Cart</div>
+        <CartList />
     </Section>
   )
 }
