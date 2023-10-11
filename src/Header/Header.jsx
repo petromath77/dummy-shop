@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 import Nav from '../Navigation/Nav';
 import MobileNav from '../Navigation/MobileNav';
 import { BiMenu, BiMenuAltRight } from 'react-icons/bi';
+import Basket from '../UI/Basket';
+
 
 const Header = () => {
     const [menu, setMenu] = useState(false);
@@ -22,7 +24,7 @@ const Header = () => {
   return (
     <header>
         <div className="relative px-4 py-4 bg-slate-400 z-20">
-            <div className="flex justify-between w-full mx-auto max-w-5xl ">
+            <div className="relative flex justify-between items-center w-full mx-auto max-w-5xl pr-8">
                 <NavLink to='/'>
                     <AiFillShop style={icon}/>
                 </NavLink>
@@ -34,6 +36,7 @@ const Header = () => {
                     }
                 </button>
                 <Nav links={linksMenu}/>
+                <Basket />
             </div>
         </div>
         <MobileNav links={linksMenu} menu={menu}/>

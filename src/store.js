@@ -5,6 +5,7 @@ import menGoodsReducer from './features/MenGoodsSlice';
 import womenGoodsReducer from './features/WomenGoodsSlice';
 import electronicsGoodsReducer from './features/ElectronicsSlice';
 import jeweleryGoodsReducer from './features/JewelerySlice';
+import cartReducer from './features/CartSlice';
 
 export default configureStore({
     reducer: {
@@ -13,6 +14,7 @@ export default configureStore({
         womens: womenGoodsReducer,
         electronics: electronicsGoodsReducer,
         jewelery: jeweleryGoodsReducer,
-        detail: detailReducer
+        detail: detailReducer,
+        cart: cartReducer
     }
 })
