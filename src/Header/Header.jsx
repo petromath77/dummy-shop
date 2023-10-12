@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AiFillShop } from 'react-icons/ai';
 import { NavLink } from "react-router-dom";
 import Nav from '../Navigation/Nav';
 import MobileNav from '../Navigation/MobileNav';
 import { BiMenu, BiMenuAltRight } from 'react-icons/bi';
 import Basket from '../UI/Basket';
+import { motion } from "framer-motion";
 
 
 const Header = () => {
@@ -25,9 +26,15 @@ const Header = () => {
     <header>
         <div className="relative px-4 py-4 bg-slate-400 z-20">
             <div className="relative flex justify-between items-center w-full mx-auto max-w-5xl pr-8">
-                <NavLink to='/'>
-                    <AiFillShop style={icon}/>
-                </NavLink>
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1 }}
+                >
+                    <NavLink to='/'>
+                        <AiFillShop style={icon}/>
+                    </NavLink>
+                </motion.div>
                 <button className="block md:hidden" onClick={toggleMenu}>
                     {!menu ?
                         <BiMenu style={iconMenu} />
@@ -36,7 +43,11 @@ const Header = () => {
                     }
                 </button>
                 <Nav links={linksMenu}/>
-                <Basket />
+                <motion.div className="absolute top-0 right-0 cursor-pointer" 
+                    whileHover={{ scale: 1.1 }}
+                >
+                    <Basket />
+                </motion.div>
             </div>
         </div>
         <MobileNav links={linksMenu} menu={menu}/>
