@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { AiFillShop } from 'react-icons/ai';
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Nav from '../Navigation/Nav';
 import MobileNav from '../Navigation/MobileNav';
 import { BiMenu, BiMenuAltRight } from 'react-icons/bi';
@@ -12,10 +11,9 @@ const Header = () => {
     const [menu, setMenu] = useState(false);
     
     const linksMenu = [
-        {'men-clothing': 'Men\'s Clothing'},
-        {'woman-clothing': 'Woman\'s Clothing'},
-        {'electronics': 'Electronics'},
-        {'jewelery': 'Jewelery'}
+        {'products': 'Products'},
+        {'about-us': 'About Us'},
+        {'Contacts': 'Contacts'}
     ]
 
     const toggleMenu = () => {
@@ -31,9 +29,7 @@ const Header = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1 }}
                 >
-                    <NavLink to='/'>
-                        <AiFillShop style={icon}/>
-                    </NavLink>
+                    <Link className='logo text-slate-600' to='/'>Dummy Shop</Link>
                 </motion.div>
                 <button className="block md:hidden" onClick={toggleMenu}>
                     {!menu ?
@@ -55,7 +51,6 @@ const Header = () => {
   )
 }
 
-const icon = {color: "#475569", fontSize: '32px'};
 const iconMenu = {color: "#475569", fontSize: '26px'};
 
 export default Header

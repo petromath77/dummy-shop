@@ -28,7 +28,6 @@ export const goodsSlice = createSlice({
         error: null
     },
     reducers: {
-
     },
     extraReducers(builder) {
         builder
