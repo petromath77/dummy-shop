@@ -1,8 +1,9 @@
-import React from 'react'
+import { useSelector } from 'react-redux';
 import GoodsList from './GoodsList';
 import { Watch } from  'react-loader-spinner';
 
-const GoodsWrapper = ({goods, status, error}) => {
+const GoodsWrapper = () => {
+  const {status, error} = useSelector(state => state.goods);
   return (
     <>
         {status === 'loading' && <Watch
@@ -17,7 +18,7 @@ const GoodsWrapper = ({goods, status, error}) => {
         />}
         {error && <h2 className='text-2xl font-bold'>Server Error!</h2>}
         {status === 'succeeded' &&
-            <GoodsList goods={goods} />
+            <GoodsList />
         }
     </>
   )
