@@ -1,8 +1,10 @@
-import React from 'react'
+import Section from '../UI/Section';
 
 const Contacts = () => {
   return (
-    <div>Contacts</div>
+    <Section>
+      <h2 className='heading-2'>Contact Us</h2>
+    </Section>
   )
 }
 
