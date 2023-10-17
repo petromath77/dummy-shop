@@ -6,16 +6,30 @@ import Button from '../UI/Button';
 
 const GoodsList = () => {
   const filterMenu = [
-      {'': 'All'},
-      {'men\'s clothing': 'Men\'s Clothing'},
-      {'women\'s clothing': 'Woman\'s Clothing'},
-      {'electronics': 'Electronics'},
-      {'jewelery': 'Jewelery'}
+      {
+        '': 'All',
+        type: 'all'
+      },
+      {
+        'men\'s clothing': 'Men\'s Clothing',
+        type: 'men\'s'
+      },
+      {
+        'women\'s clothing': 'Woman\'s Clothing',
+        type: 'women\'s'},
+      {
+        'electronics': 'Electronics',
+        type: 'electronics'
+      },
+      {
+        'jewelery': 'Jewelery',
+        type: 'jewelery'
+      }
   ];
 
   const { goods } = useSelector(state => state.goods);
   const [filtered, setFiltered] = useState(goods);
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState('all');
 
   const dispath = useDispatch();
 
@@ -23,18 +37,18 @@ const GoodsList = () => {
     dispath(addCart(item));
   }
 
-  const filterProducts = (type) => {
-    const filter = goods.filter((item) => item.category === type);
-    type.length > 0 ? setFiltered(filter) : setFiltered(goods);
-    setActive(true);
+  const filterProducts = (category, type) => {
+    const filter = goods.filter((item) => item.category === category);
+    category.length > 0 ? setFiltered(filter) : setFiltered(goods);
+    setActive(type);
   }
 
   return (
     <>  
-        <h2 className='pb-4 mt-4 font-bold text-2xl border-solid border-b border-slate-400'>All Products</h2>
+        <h2 className='heading-2'>All Products</h2>
         <div className='flex justify-center w-fit mx-auto my-8 gap-4'>
           {filterMenu.map(item => 
-            <Button className={active === true ? 'px-3 py-1 mt-4 active-filter' : 'px-3 py-1 mt-4'} handler={() => filterProducts(`${Object.keys(item)}`) }>{Object.values(item)}</Button>
+            <Button key={Object.values(item)[1]} className={active === `${Object.values(item)[1]}` ? 'px-3 py-1 mt-4 active-filter' : 'px-3 py-1 mt-4'} handler={() => filterProducts(`${Object.keys(item)[0]}`, `${Object.values(item)[1]}`) }>{Object.values(item)[0]}</Button>
           )}
         </div>
         <div className='grid grid-cols-3 gap-6'>

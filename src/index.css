@@ -27,3 +27,13 @@ code {
   font-family: 'Titan One', sans-serif;
   font-size: 24px;
 }
+
+.active-filter {
+  background-color: #94a3b8;
+}
+
+@layer base {
+  .heading-2 {
+    @apply w-max mx-auto pb-4 mt-4 font-bold text-4xl border-solid border-b-4 border-slate-400;
+  }
+}

@@ -8,7 +8,6 @@ const CartCard = ({cart, addQuantity, reduceQuantity, removeCartItem}) => {
         <img className='w-56 h-56 object-contain' src={image} alt="" loading="lazy" />
         <div className='w-xxs'>
           <div className='mt-4 font-bold'>{title}</div>
-          <div className='mt-4 font-bold'>Cost: {price}$</div>
           <div className='flex flex-col justify-center mt-4 font-bold'>
             <div>Quantity:</div>
             <div className='flex align-center mt-2 mx-auto'>
@@ -17,6 +16,7 @@ const CartCard = ({cart, addQuantity, reduceQuantity, removeCartItem}) => {
               <Button handler={addQuantity} className='px-3 py-1 mt-0'>+</Button>
             </div> 
           </div>
+          <div className='mt-4 font-bold'>Cost: {cartQuantity*price}$</div>
           <Button handler={removeCartItem} className='px-3 py-1 mt-4'>Remove</Button>
         </div>
     </div>

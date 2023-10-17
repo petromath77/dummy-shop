@@ -2,7 +2,9 @@ import Section from '../UI/Section';
 
 const NotFound = () => {
   return (
-    <Section>404</Section>
+    <Section>
+      <h2 className='heading-2'>404</h2>
+    </Section>
   )
 }
 
