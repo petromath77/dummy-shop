@@ -13,7 +13,7 @@ const Header = () => {
     const linksMenu = [
         {'products': 'Products'},
         {'about-us': 'About Us'},
-        {'Contacts': 'Contacts'}
+        {'contacts': 'Contacts'}
     ]
 
     const toggleMenu = () => {
