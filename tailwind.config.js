@@ -10,7 +10,8 @@ module.exports = {
         'xxs': '200px',
       },
       height: {
-        '150': '600px'
+        '150': '600px',
+        'h-banner': 'calc(100vh - 120px)'
       }
     },
   },

@@ -5,6 +5,7 @@ import { fetchDetail } from '../features/DetailSlice';
 import { Watch } from  'react-loader-spinner'
 import Section from '../UI/Section';
 import { ImPriceTag } from 'react-icons/im';
+import { AiFillStar } from 'react-icons/ai';
 
 const Detail = () => {
     let params = useParams();
@@ -36,7 +37,7 @@ const Detail = () => {
         />}
         {error && <h2 className='mt-4 text-2xl font-bold'>Server Error!</h2>}
         {status === 'succeeded' &&
-          <div className="flex mt-8">
+          <div className="flex mt-12">
             <div className="w-1/2">
                 <img className="w-full h-96 object-contain" src={product.image} alt="" loading="lazy" />
             </div>
@@ -44,6 +45,7 @@ const Detail = () => {
                 <div className="py-8 px-4 bg-slate-300 rounded-xl">
                     <h3 className="font-bold text-2xl mb-4">{product.title}</h3>
                     <p className="text-lg italic mb-4">{product.description}</p>
+                    <p className="flex justify-center items-center text-lg italic mb-4">Rating: {product.rating.rate} <AiFillStar style={star} className='ml-2'/></p>
                     <div className="flex justify-center gap-4">
                       <ImPriceTag style={icon}/>
                       <div className="font-bold text-lg italic mb-4">{product.price}$</div>
@@ -57,5 +59,6 @@ const Detail = () => {
 }
 
 const icon = {color: "#475569", fontSize: '26px'};
+const star = {color: "#475569", fontSize: '24px'};
 
 export default Detail

@@ -4,13 +4,15 @@ import { Autoplay } from 'swiper/modules'
 
 // Import Swiper styles
 import 'swiper/css';
+import Overlay from '../UI/Overlay';
 
 const Home = () => {
   const images = ['1','2','3','4'];
 
   return (
     <>
-      <div className='h-150'>
+      <div className='relative h-h-banner'>
+        <Overlay />
         <Swiper className='w-full h-full'
           spaceBetween={30}
           centeredSlides={true}
@@ -23,7 +25,7 @@ const Home = () => {
           {
             images.map(image =>
               <SwiperSlide className='w-full h-full' key={image}>
-                <img className='w-full h-full object-cover' src={process.env.PUBLIC_URL + `/images/slide${image}.jpg`} alt="" />
+                <img className='w-full h-full object-cover' src={process.env.PUBLIC_URL + `/images/slide${image}.jpg`} alt="" loading="lazy"/>
               </SwiperSlide>
             )
           }

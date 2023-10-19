@@ -33,7 +33,15 @@ code {
 }
 
 @layer base {
+  .heading-1 {
+    @apply font-bold text-7xl uppercase;
+  }
+
+  .heading-3 {
+    @apply font-bold text-3xl uppercase;
+  }
+
   .heading-2 {
-    @apply w-max mx-auto pb-4 mt-4 font-bold text-4xl border-solid border-b-4 border-slate-400;
+    @apply w-max mx-auto pb-4 mt-4 font-bold text-3xl md:text-4xl border-solid border-b-4 border-slate-400;
   }
 }
