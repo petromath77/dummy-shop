@@ -48,7 +48,7 @@ const GoodsList = () => {
         <h2 className='heading-2'>All Products</h2>
         <div className='flex justify-center w-fit mx-auto my-8 gap-4'>
           {filterMenu.map(item => 
-            <Button key={Object.values(item)[1]} className={active === `${Object.values(item)[1]}` ? 'px-3 py-1 mt-4 active-filter' : 'px-3 py-1 mt-4'} handler={() => filterProducts(`${Object.keys(item)[0]}`, `${Object.values(item)[1]}`) }>{Object.values(item)[0]}</Button>
+            <Button type='button' key={Object.values(item)[1]} className={active === `${Object.values(item)[1]}` ? 'px-3 py-1 mt-4 active-filter' : 'px-3 py-1 mt-4'} handler={() => filterProducts(`${Object.keys(item)[0]}`, `${Object.values(item)[1]}`) }>{Object.values(item)[0]}</Button>
           )}
         </div>
         <div className='grid grid-cols-3 gap-6'>

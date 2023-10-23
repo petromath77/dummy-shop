@@ -21,7 +21,7 @@ const CartList = () => {
 
   return (
     <div className="mx-auto max-w-xl flex flex-col gap-4">
-        {carts.length === 0 && <div className="font-bold text-xl">No Products In The Cart</div>}
+        {carts.length === 0 && <div className="font-bold text-xl text-slate-500">No Products In The Cart</div>}
         {carts.map( cart => 
                 <CartCard removeCartItem={() => removeCartItem(cart)} reduceQuantity={() => reduceQuantity(cart)} addQuantity={() => addQuantity(cart)} key={cart.id} cart={cart} />
              )

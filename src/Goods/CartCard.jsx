@@ -11,13 +11,13 @@ const CartCard = ({cart, addQuantity, reduceQuantity, removeCartItem}) => {
           <div className='flex flex-col justify-center mt-4 font-bold'>
             <div>Quantity:</div>
             <div className='flex align-center mt-2 mx-auto'>
-              <Button handler={reduceQuantity} className='px-3 py-1 mt-0'>-</Button>
+              <Button type='button' handler={reduceQuantity} className='px-3 py-1 mt-0'>-</Button>
               <div className='w-50 h-8 p-2 mx-2 rounded-md text-center leading-3 border-solid border-2 border-slate-400'>{cartQuantity}</div>
-              <Button handler={addQuantity} className='px-3 py-1 mt-0'>+</Button>
+              <Button type='button' handler={addQuantity} className='px-3 py-1 mt-0'>+</Button>
             </div> 
           </div>
           <div className='mt-4 font-bold'>Cost: {cartQuantity*price}$</div>
-          <Button handler={removeCartItem} className='px-3 py-1 mt-4'>Remove</Button>
+          <Button type='button' handler={removeCartItem} className='px-3 py-1 mt-4'>Remove</Button>
         </div>
     </div>
   )
