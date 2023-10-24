@@ -3,37 +3,48 @@ import { createSlice } from "@reduxjs/toolkit";
 export const cartSlice = createSlice({
     name: 'cart',
     initialState: {
-        cart: [],
+        carts: localStorage.getItem("carts")
+                    ? JSON.parse(localStorage.getItem("carts"))
+                    : [],
+        totalQuantity: 0,
+        totalAmount: 0
     },
     reducers: {
         addCart: (state, action) => {
-            const cartIndex = state.cart.findIndex( (item) => item.id === action.payload.id);
+            const cartIndex = state.carts.findIndex( (item) => item.id === action.payload.id);
 
             if(cartIndex >= 0 ) {
-                state.cart[cartIndex].cartQuantity += 1;
+                state.carts[cartIndex].cartQuantity += 1;
             } else {
-                state.cart.push({...action.payload, cartQuantity: 1});
+                state.carts.push({...action.payload, cartQuantity: 1});
             }
+            localStorage.setItem("carts", JSON.stringify(state.carts));
         },
         increaseQuantity: (state, action) => {
-            const cartIndex = state.cart.findIndex( (item) => item.id === action.payload.id);
+            const cartIndex = state.carts.findIndex( (item) => item.id === action.payload.id);
 
-            state.cart[cartIndex].cartQuantity += 1;
+            state.carts[cartIndex].cartQuantity += 1;
+            localStorage.setItem("carts", JSON.stringify(state.carts));
         },
         decreaseQuantity: (state, action) => {
-            const cartIndex = state.cart.findIndex( (item) => item.id === action.payload.id);
+            const cartIndex = state.carts.findIndex( (item) => item.id === action.payload.id);
             
-            if(state.cart[cartIndex].cartQuantity > 1) {
-                state.cart[cartIndex].cartQuantity -= 1;
-            } else if(state.cart[cartIndex].cartQuantity === 1) {
-                const leftItems = state.cart.filter( (item) => item.id !== action.payload.id);
-                state.cart = leftItems;
+            if(state.carts[cartIndex].cartQuantity > 1) {
+                state.carts[cartIndex].cartQuantity -= 1;
+            } else if(state.carts[cartIndex].cartQuantity === 1) {
+                const leftItems = state.carts.filter( (item) => item.id !== action.payload.id);
+                state.carts = leftItems;
             }
+            localStorage.setItem("carts", JSON.stringify(state.carts));
         },
         removeItem: (state, action) => {
-                const leftItems = state.cart.filter( (item) => item.id !== action.payload.id);
-                state.cart = leftItems;
-        }
+                const leftItems = state.carts.filter( (item) => item.id !== action.payload.id);
+                state.carts = leftItems;
+                localStorage.setItem("carts", JSON.stringify(state.carts));
+        },
+        // cartsTotal: (state, action) => {
+
+        // }
     },
 })
 
