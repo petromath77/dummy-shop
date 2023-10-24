@@ -28,7 +28,7 @@ const CartList = () => {
             return (<CartCard removeCartItem={() => removeCartItem(cart)} reduceQuantity={() => reduceQuantity(cart)} addQuantity={() => addQuantity(cart)} key={cart.id} cart={cart} />)
           })
         }
-        {carts.length > 0 && <div className='w-max px-6 py-2 ml-auto bg-slate-200 border border-slate-400 rounded-xl font-bold text-lg text-right'>Total Cost: {totalCost}$</div>}
+        {carts.length > 0 && <div className='w-max px-6 py-2 ml-auto bg-slate-200 border border-slate-400 rounded-xl font-bold text-lg text-right'>Total Cost: {totalCost.toFixed(2)}$</div>}
     </div>
   )
 }
