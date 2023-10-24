@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 const Basket = () => {
-  const itemsCount = useSelector(state => state.cart.cart);
+  const itemsCount = useSelector(state => state.cart.carts);
   return (
     <NavLink to='/cart'>
         <div className="relative">

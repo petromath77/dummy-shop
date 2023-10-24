@@ -32,6 +32,19 @@ code {
   background-color: #94a3b8;
 }
 
+.clamp {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  min-height: 45px;
+}
+
+button:disabled,
+button[disabled] {
+  background-color: #94a3b8;
+}
+
 @layer base {
   .heading-1 {
     @apply font-bold text-7xl uppercase;
