@@ -57,4 +57,8 @@ button[disabled] {
   .heading-2 {
     @apply w-max mx-auto pb-4 mt-4 font-bold text-3xl md:text-4xl border-solid border-b-4 border-slate-400;
   }
+
+  .buttonLink {
+    @apply bg-slate-500 text-slate-100 mx-auto rounded-md hover:bg-slate-400;
+  }
 }
