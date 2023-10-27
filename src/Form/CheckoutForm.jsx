@@ -5,6 +5,8 @@ import FormInput from '../UI/FormInput';
 import { checkoutValidationSchema } from '../Validation/checkoutValidationSchema';
 import { Formik, Form } from 'formik';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { clearCart } from '../features/CartSlice';
 import WatchSpinner from '../UI/WatchSpinner';
 
 const CheckoutForm = () => {
@@ -15,6 +17,8 @@ const CheckoutForm = () => {
         phone: '',
         adress: '',
     };
+
+    const dispatch = useDispatch();
 
     const navigate = useNavigate();
 
@@ -29,6 +33,7 @@ const CheckoutForm = () => {
                 resetForm({values: ''});
                 setSended(false);
                 navigate('/thanks');
+                dispatch(clearCart());
               }, 3000);
         
         }}

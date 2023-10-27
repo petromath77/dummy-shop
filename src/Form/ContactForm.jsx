@@ -29,13 +29,14 @@ const ContactForm = () => {
         >   
             {({errors}) => (
                 <Form className='max-w-xs mx-auto mt-12 text-left'>
-                    <FormInput view="input" type="text" name="name" placeholder="Name" />
+                    <FormInput view="input" name="name" placeholder="Name" />
                     {errors.name && <Error errors={errors.name} />}
-                    <FormInput view="input" type="email" name="email" placeholder="Email" />
+                    <FormInput view="input" name="email" placeholder="Email" />
                     {errors.email && <Error errors={errors.email} />}
-                    <FormInput view="textarea" type="text" name="message" placeholder="Message" />
+                    <FormInput view="textarea" name="message" placeholder="Message" />
                     {errors.message && <Error errors={errors.message} />}
                     <Button type='submit' disabled={Object.keys(errors).length > 0} className='w-full px-3 py-3 mt-2 font-bold'>Send</Button>
+                    {sended && <div className='mt-6 text-lg text-center text-slate-500 font-bold'>Your Message Is Sended!</div>}
                 </Form>
             )}
         </Formik>

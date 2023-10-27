@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Basket = () => {
   const itemsCount = useSelector(state => state.cart.carts);
+
   return (
     <NavLink to='/cart'>
         <div className="relative">
