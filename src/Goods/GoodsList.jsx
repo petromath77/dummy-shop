@@ -31,10 +31,10 @@ const GoodsList = () => {
   const [filtered, setFiltered] = useState(goods);
   const [active, setActive] = useState('all');
 
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
 
   const addProduct = (item) => {
-    dispath(addCart(item));
+    dispatch(addCart(item));
   }
 
   const filterProducts = (category, type) => {
