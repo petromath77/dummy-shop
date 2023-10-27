@@ -46,12 +46,12 @@ const GoodsList = () => {
   return (
     <>  
         <h2 className='heading-2'>All Products</h2>
-        <div className='flex justify-center w-fit mx-auto my-8 gap-4'>
+        <div className='flex justify-center flex-wrap w-fit mx-auto my-8 gap-x-4'>
           {filterMenu.map(item => 
             <Button type='button' key={Object.values(item)[1]} className={active === `${Object.values(item)[1]}` ? 'px-3 py-1 mt-4 active-filter' : 'px-3 py-1 mt-4'} handler={() => filterProducts(`${Object.keys(item)[0]}`, `${Object.values(item)[1]}`) }>{Object.values(item)[0]}</Button>
           )}
         </div>
-        <div className='grid grid-cols-3 gap-6'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
             {filtered.map((item) => 
                 <GoodsCard addProduct={() => addProduct(item)} key={item.id} {...item}/>
             )}

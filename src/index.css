@@ -51,11 +51,11 @@ button[disabled] {
 
 @layer base {
   .heading-1 {
-    @apply font-bold text-7xl uppercase;
+    @apply font-bold text-5xl md:text-7xl uppercase ;
   }
 
   .heading-3 {
-    @apply font-bold text-3xl uppercase;
+    @apply font-bold text-xl md:text-3xl uppercase;
   }
 
   .heading-2 {

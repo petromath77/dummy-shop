@@ -12,6 +12,9 @@ module.exports = {
       height: {
         '150': '600px',
         'h-banner': 'calc(100vh - 120px)'
+      },
+      zIndex: {
+        '9': '9',
       }
     },
   },

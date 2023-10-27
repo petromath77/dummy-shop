@@ -43,12 +43,13 @@ const Detail = () => {
         />}
         {error && <h2 className='mt-4 text-2xl font-bold'>Server Error!</h2>}
         {status === 'succeeded' &&
-          <div className="flex mt-12">
-            <div className="w-1/2">
+          <div className="flex flex-col md:flex-row mt-12">
+            <div className="w-full md:w-1/2 mb-4 md:mb-0">
                 <img className="w-full h-96 object-contain" src={product.image} alt="" loading="lazy" />
             </div>
-            <div className="w-1/2 px-8">
-                <div className="py-8 px-4 bg-slate-300 rounded-xl">
+            <div className="w-full md:w-1/2 md:px-4">
+                <div className="p-8 bg-slate-300 rounded-xl">
+                    <h4 className="font-bold text-md mb-4 uppercase">{product.category}</h4>
                     <h3 className="font-bold text-2xl mb-4">{product.title}</h3>
                     <p className="text-lg italic mb-4">{product.description}</p>
                     <p className="flex justify-center items-center text-lg italic mb-4">Rating: {product.rating.rate} <AiFillStar style={star} className='ml-2'/></p>

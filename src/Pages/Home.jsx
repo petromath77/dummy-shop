@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <div className='relative h-h-banner'>
-        <Overlay />
+        <Overlay title='New Arrival' subtitle='New Discount Season' />
         <Swiper className='w-full h-full'
           spaceBetween={30}
           centeredSlides={true}
