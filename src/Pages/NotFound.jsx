@@ -1,8 +1,10 @@
-import React from 'react'
+import Section from '../UI/Section';
 
 const NotFound = () => {
   return (
-    <section className="w-full mx-auto max-w-5xl px-4 py-8">404</section>
+    <Section>
+      <h2 className='heading-2'>404</h2>
+    </Section>
   )
 }
 

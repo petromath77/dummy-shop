@@ -1,12 +1,14 @@
-import React from 'react'
+import {NavLink} from 'react-router-dom';
+import Button from '../UI/Button';
 
-const GoodsCard = ({category, description, image, price, title}) => {
+const GoodsCard = ({id, image, price, title, addProduct}) => {
   return (
-    <div className='flex flex-col justify-between p-4 border border-slate-400 rounded-xl'>
-        <img className='w-56 h-56 my-0 mx-auto object-contain' src={image} alt="" />
+    <div className='flex flex-col flex-start p-4 border border-slate-400 rounded-xl hover:shadow-lg ease duration-300'>
+        <img className='w-56 h-56 mb-4 my-0 mx-auto object-contain' src={image} alt="" loading="lazy" />
         <div>
-            <h4 className='mt-4 font-bold'>{title}</h4>
-            <div className='mt-4'>{price}$</div>
+          <NavLink to={`/products/${id}`} className='mt-4 font-bold hover:underline clamp'>{title}</NavLink>
+          <div className='mt-4'>{price}$</div>
+          <Button type='button' className='px-4 py-2 mt-2' handler={addProduct}>Add To Cart</Button>
         </div>
     </div>
   )
